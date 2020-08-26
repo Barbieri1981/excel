@@ -15,21 +15,17 @@ import java.io.IOException;
 @RestController
 public class DocumentoContableController {
 
-    private DocumentoContableService service;
+  private DocumentoContableService service;
 
-	public DocumentoContableController(final DocumentoContableService service) {
-		this.service = service;
-	}
+  public DocumentoContableController(final DocumentoContableService service) {
+    this.service = service;
+  }
 
-	@ApiOperation(
-			"Metodo encargado de generar un archivo contable"
-	)
-	@PostMapping(
-			value = "/generar",
-			produces = MediaType.APPLICATION_JSON_VALUE
-	)
-	public void generarArchivoContable(@RequestBody GenerarDocumentoContableRequestDTO generarDocumentoContableRequestDTO) throws IOException {
-		service.generarArchivo(generarDocumentoContableRequestDTO);
-	}
-
+  @ApiOperation("Metodo encargado de generar un archivo contable")
+  @PostMapping(value = "/generar/excel", produces = MediaType.APPLICATION_JSON_VALUE)
+  public void generarArchivoContable(
+      final @RequestBody GenerarDocumentoContableRequestDTO generarDocumentoContableRequestDTO)
+      throws IOException {
+    service.generarArchivo(generarDocumentoContableRequestDTO);
+  }
 }

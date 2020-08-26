@@ -14,12 +14,13 @@ import java.util.Optional;
 @Configuration
 public class SwaggerConfig {
 
-    @Bean
-    public Docket userApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("com.excel"))
-                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
-                .build().genericModelSubstitutes(Optional.class);
-    }
+  @Bean
+  public Docket userApi() {
+    return new Docket(DocumentationType.SWAGGER_2)
+        .select()
+        .apis(RequestHandlerSelectors.basePackage("com.excel"))
+        .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
+        .build()
+        .genericModelSubstitutes(Optional.class);
+  }
 }

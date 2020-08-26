@@ -1,0 +1,6 @@
+documentos:
+  devolucionsaldoafavor:
+      nombre: "Devolucion Saldo A Favor"
+      extension: ".xlsx"
+      ruta: "/formularios/demograficos/"
+      titulos: "GLOSA,VIGENTE,TM,CUENTA,AUX,CENCO,SUC,MONTO,RUT,MONEDA"
